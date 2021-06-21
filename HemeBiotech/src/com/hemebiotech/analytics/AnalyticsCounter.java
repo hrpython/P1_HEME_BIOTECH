@@ -1,43 +1,59 @@
-package com.hemebiotech.analytics;
-
+package src.com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Iterator;
+import java.util.TreeSet;
 
 public class AnalyticsCounter {
-	private static int headacheCount = 0;	// initialize to 0
-	private static int rashCount = 0;		// initialize to 0
-	private static int pupilCount = 0;		// initialize to 0
-	
+	public static TreeSet<disease_count> liste_maladie_compte= new TreeSet<disease_count>();
+	public static TreeSet<String> liste_maladie = new TreeSet<String>();
 	public static void main(String args[]) throws Exception {
 		// first get input
 		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
 		String line = reader.readLine();
-
-		int i = 0;	// set i to 0
-		int headCount = 0;	// counts headaches
+		disease_count dc = null;
+		int count = 0;
+		
 		while (line != null) {
-			i++;	// increment i
-			System.out.println("symptom from file: " + line);
-			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
+			if (liste_maladie.contains(line)){
+				Iterator<disease_count> itr=liste_maladie_compte.iterator();  
+				while(itr.hasNext()){
+					 	dc = itr.next();
+					   if (dc.name.equals(line)){
+						   count = dc.nombre;
+						   liste_maladie_compte.remove(dc);
+						   liste_maladie_compte.add(new disease_count(line, count+1));
+						   break;
+					  }
+				}
+			
+			
+				}
+			 				
+			 else
+			{
+				liste_maladie.add(line);
+				liste_maladie_compte.add(new disease_count(line, 1));
 			}
-			else if (line.equals("rush")) {
-				rashCount++;
-			}
-			else if (line.contains("pupils")) {
-				pupilCount++;
-			}
-
-			line = reader.readLine();	// get another symptom
+		
+			line = reader.readLine();
 		}
 		
-		// next generate output
 		FileWriter writer = new FileWriter ("result.out");
-		writer.write("headache: " + headacheCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
+		Iterator<disease_count> itr=liste_maladie_compte.iterator();  
+		while(itr.hasNext()){
+			 	dc = itr.next();
+			 	writer.write(dc.name+" "+dc.nombre+ "\n");
+			   System.out.println(dc.name+" "+dc.nombre);
+			  
+				
+				
+				
+				   
+			   }
+		writer.close();}
+	
+	
 	}
-}
+
