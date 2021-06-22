@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"src.com.hemebiotech.analytics","l":"disease_count"}];updateSearchResults();

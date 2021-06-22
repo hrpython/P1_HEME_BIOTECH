@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"src.com.hemebiotech.analytics","c":"disease_count","l":"compareTo(disease_count)","u":"compareTo(src.com.hemebiotech.analytics.disease_count)"},{"p":"src.com.hemebiotech.analytics","c":"disease_count","l":"disease_count(String, int)","u":"%3Cinit%3E(java.lang.String,int)"}];updateSearchResults();
