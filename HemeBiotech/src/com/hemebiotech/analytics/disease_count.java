@@ -11,13 +11,22 @@ public class disease_count implements Comparable<disease_count>{
 	
 	 String name;
 	 int nombre;
+	 /**
+	  * 
+	  * @param name
+	  * nom du symptôme
+	  * @param nombre
+	  * nombre celui de l'occurence du symptôme
+	  */
 	 public disease_count(String name, int nombre) {
 		 this.name=name;
 		 this.nombre=nombre;
 		
 	}
 /**
- * @param Comparaison pour le tri dans le TreeSet
+ * @param d
+ * d est un objet disease_count comparé à l'instance
+ * Comparaison pour le tri dans le TreeSet
  * 
  */
 	

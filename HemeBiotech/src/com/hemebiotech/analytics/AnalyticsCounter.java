@@ -10,6 +10,8 @@ import java.util.TreeSet;
  * 
  * @author hraza
  *Utilisation de deux TreeSet permettant le tri automatique suivant la méthode de la classe disease_count
+ *liste symptome pour déterminer si le symptome a déjà été pris en compte
+ *liste symptome occurence pour compter le nombre d'apparition de ce symptôme
  */
 public class AnalyticsCounter {
 	public static TreeSet<disease_count> liste_symptome_occurence= new TreeSet<disease_count>();
