@@ -13,7 +13,10 @@ String str;
 	public CountSymptoms(List<String> list) {
 		this.symptoms = list;
 	}
-	
+	/**
+	 * 
+	 * @return TreeMap tri par ordre alphabétique des symptômes avec le nombre d'occurences
+	 */
 	public TreeMap<String,Integer> TriCompteSymptoms() {
 		Iterator<String> it = symptoms.iterator();
 		while (it.hasNext()) {
