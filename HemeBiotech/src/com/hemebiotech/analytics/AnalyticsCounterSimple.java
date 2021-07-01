@@ -13,8 +13,8 @@ import java.util.TreeSet;
  *liste symptome pour déterminer si le symptome a déjà été pris en compte
  *liste symptome occurence pour compter le nombre d'apparition de ce symptôme
  */
-public class AnalyticsCounter {
-	public static TreeSet<disease_count> liste_symptome_occurence= new TreeSet<disease_count>();
+public class AnalyticsCounterSimple {
+	public static TreeSet<disease_count_simple> liste_symptome_occurence= new TreeSet<disease_count_simple>();
 	public static TreeSet<String> liste_symptome = new TreeSet<String>();
 	public static void main(String args[]) throws Exception {
 	BufferedReader reader = null;
@@ -32,12 +32,12 @@ public class AnalyticsCounter {
 			System.out.println(e.getMessage());
 		}
 		
-		disease_count dc = null;
+		disease_count_simple dc = null;
 		int count = 0;
 		
 		while (line != null) {
 			if (liste_symptome.contains(line)){
-				Iterator<disease_count> itr=liste_symptome_occurence.iterator();  
+				Iterator<disease_count_simple> itr=liste_symptome_occurence.iterator();  
 				while(itr.hasNext()){
 					 	dc = itr.next();
 					 	/**
@@ -50,7 +50,7 @@ public class AnalyticsCounter {
 					   if (dc.name.equals(line)){
 						   count = dc.nombre;
 						   liste_symptome_occurence.remove(dc);
-						   liste_symptome_occurence.add(new disease_count(line, count+1));
+						   liste_symptome_occurence.add(new disease_count_simple(line, count+1));
 						   break;
 					  }
 				}
@@ -61,14 +61,14 @@ public class AnalyticsCounter {
 			 else
 			{
 				liste_symptome.add(line);
-				liste_symptome_occurence.add(new disease_count(line, 1));
+				liste_symptome_occurence.add(new disease_count_simple(line, 1));
 			}
 		
 			line = reader.readLine();
 		}
 		
 		FileWriter writer = new FileWriter ("result.out");
-		Iterator<disease_count> itr=liste_symptome_occurence.iterator();  
+		Iterator<disease_count_simple> itr=liste_symptome_occurence.iterator();  
 		while(itr.hasNext()){
 			 	dc = itr.next();
 			 	writer.write(dc.name+" "+dc.nombre+ "\n");

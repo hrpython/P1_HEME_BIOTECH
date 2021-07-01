@@ -6,16 +6,20 @@ tremor
 stomach pain
 high blood pressure
 stiff neck
+covid
 cough
 insomnia
 headache
+dysentria
 insomnia
 constricted pupils
 nausea
 cough
+dysentria
 shortness of breath
 blurred vision
 dizziness
+covid
 low blood pressure
 dry mouth
 tremor
@@ -23,6 +27,7 @@ dry mouth
 arrhythmias
 stomach pain
 anxiety
+covid
 dizziness
 water retention
 fever

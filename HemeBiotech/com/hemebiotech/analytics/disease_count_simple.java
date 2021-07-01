@@ -1,4 +1,4 @@
-package src.com.hemebiotech.analytics;
+package com.hemebiotech.analytics;
 /**
  * 
  *@author hraza
@@ -7,7 +7,7 @@ package src.com.hemebiotech.analytics;
  *Classe permettant de combiner nom du symptôme et occurences de celui-ci
  *Comprend une méthode de comparaison
  */
-public class disease_count implements Comparable<disease_count>{
+public class disease_count_simple implements Comparable<disease_count_simple>{
 	
 	 String name;
 	 int nombre;
@@ -18,7 +18,7 @@ public class disease_count implements Comparable<disease_count>{
 	  * @param nombre
 	  * nombre celui de l'occurence du symptôme
 	  */
-	 public disease_count(String name, int nombre) {
+	 public disease_count_simple(String name, int nombre) {
 		 this.name=name;
 		 this.nombre=nombre;
 		
@@ -30,7 +30,7 @@ public class disease_count implements Comparable<disease_count>{
  * 
  */
 	
-	 public int compareTo(disease_count d) {
+	 public int compareTo(disease_count_simple d) {
 		 return name.toString().compareTo(d.name.toString());
 	 }
 }

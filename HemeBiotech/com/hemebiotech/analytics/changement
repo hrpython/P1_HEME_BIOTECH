@@ -1,0 +1,8 @@
+retirer les commentaires inutiles initiLIZE TO 0
+retirer les variables inutiles qui ne peuvent pas être exhaustives
+headachescount, rashcount, pupilcount
+confusion sur les variables headCount au lieu de headachecount
+une classe lecture vers une list
+une classe list vers comptage list
+une classe affichage
+une classe enregistrement
