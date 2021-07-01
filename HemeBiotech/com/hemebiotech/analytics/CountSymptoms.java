@@ -9,9 +9,11 @@ public class CountSymptoms {
 List<String> symptoms = new ArrayList<String>();
 TreeMap<String,Integer> SymptomOccurences = new TreeMap<String,Integer>(); 
 String str;
+
 	public CountSymptoms(List<String> list) {
 		this.symptoms = list;
 	}
+	
 	public TreeMap<String,Integer> TriCompteSymptoms() {
 		Iterator<String> it = symptoms.iterator();
 		while (it.hasNext()) {

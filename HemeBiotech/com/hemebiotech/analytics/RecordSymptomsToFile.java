@@ -17,7 +17,8 @@ public void RecordToFile() {
 		FileWriter writer = new FileWriter ("result.out");
 		 for(Map.Entry<String,Integer> m:tmIn.entrySet()){    
 			 
-		      writer.write(m.getKey()+" "+m.getValue()+ "\n");    
+		      writer.write(m.getKey()+" "+m.getValue()+ "\n");  
+		      System.out.println(m.getKey()+" "+m.getValue());   
 		      } 
 		 writer.close();
 	} catch (IOException e) {
